@@ -2,82 +2,53 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Konu Planlayıcı v10.1</title>
+  <title>Konu Planlayıcı v11.2</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1E0000, #500000);
-      color: #FFF;
-      padding: 30px;
-    }
-    .top-bar {
-      position: relative; height: 140px; margin-bottom: 20px;
-    }
-    .calc-btn {
-      position: absolute; left: 30px; top: 50%; transform: translateY(-50%);
-      background: linear-gradient(to right,#843A37,#B75B58);
-      color: #FFF; border: none; padding: 12px 24px; border-radius: 8px;
-      cursor: pointer; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-      transition: transform .3s;
-    }
-    .calc-btn:hover { transform: translateY(-50%) scale(1.05); }
-    .logo { display: block; margin: 0 auto; height: 120px; }
-    .header-text {
-      position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
-      font-size: 12px; color: #FFF;
-    }
-    .container {
-      max-width: 1100px; margin: auto; background: rgba(30,0,0,0.8);
-      padding: 30px; border-radius: 15px;
-    }
-    h2 { text-align: center; margin-bottom: 20px; }
-    label { display: block; font-weight: bold; margin-top: 15px; }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#1E0000,#500000); color:#FFF; padding:30px; }
+    .top-bar { position:relative; height:140px; margin-bottom:20px; }
+    .calc-btn { position:absolute; left:30px; top:50%; transform:translateY(-50%);
+      background:linear-gradient(to right,#843A37,#B75B58); color:#FFF; border:none; padding:12px 24px;
+      border-radius:8px; cursor:pointer; font-weight:bold; box-shadow:0 2px 5px rgba(0,0,0,0.5); transition:transform .3s; }
+    .calc-btn:hover { transform:translateY(-50%) scale(1.05); }
+    .logo { display:block; margin:0 auto; height:120px; }
+    .header-text { position:absolute; right:30px; top:50%; transform:translateY(-50%); font-size:12px; color:#FFF; }
+    .container { max-width:1100px; margin:auto; background:rgba(30,0,0,0.8); padding:30px; border-radius:15px; }
+    h2 { text-align:center; margin-bottom:20px; }
+    label { display:block; font-weight:bold; margin-top:15px; }
     input, select {
-      width: 100%; padding: 10px; margin-top: 5px;
-      background: #300000; border: 1px solid #843A37; border-radius: 8px; color: #FFF;
-      font-family: 'Poppins', sans-serif;
+      width:100%; padding:10px; margin-top:5px; background:#300000; border:1px solid #843A37; border-radius:8px; color:#FFF;
     }
-    .row {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;
-    }
-    .row input, .row select { flex: 1; min-width: 120px; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:15px; }
+    .row input, .row select { flex:1; min-width:120px; }
     button.main-btn {
-      background: linear-gradient(to right,#843A37,#B75B58);
-      border: none; padding: 12px; width: 100%; border-radius: 10px;
-      color: #FFF; font-weight: bold; font-size: 16px;
-      cursor: pointer; transition: transform .3s; margin-top: 10px;
+      background:linear-gradient(to right,#843A37,#B75B58); border:none; padding:12px; width:100%; border-radius:10px; color:#FFF;
+      font-weight:bold; font-size:16px; cursor:pointer; transition:transform .3s; margin-top:10px;
     }
-    button.main-btn:hover { transform: scale(1.03); }
-    .days-grid {
-      display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px;
-    }
+    button.main-btn:hover { transform:scale(1.03); }
+    .days-grid { display:flex; flex-wrap:wrap; gap:20px; margin-top:30px; }
     .day-card {
-      width: calc(20% - 16px); min-width: 160px; background: #2E0000;
-      padding: 15px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.5);
-      color: #FFF;
+      width:calc(20% - 16px); min-width:160px; background:#2E0000; padding:15px; border-radius:10px;
+      box-shadow:0 0 5px rgba(0,0,0,0.5); color:#FFF;
     }
     .gold {
-      background: linear-gradient(135deg,#FFD700,#FFA500);
-      color: #1E0000; font-weight: bold;
+      background:linear-gradient(135deg,#FFD700,#FFA500); color:#1E0000; font-weight:bold;
     }
-    .day-card strong { display: block; margin-bottom: 10px; }
-    .day-card ul { padding-left: 18px; margin: 0; }
+    .day-card strong { display:block; margin-bottom:10px; }
+    .day-card ul { padding-left:18px; margin:0; }
   </style>
 </head>
 <body>
   <div class="top-bar">
     <button class="calc-btn" id="calcBtn">Not Hesaplayıcı</button>
-    <img src="7A3688F9-996F-4661-8D84-7BDD44515448.png" alt="Logo" class="logo">
+    <img src="7A3688F9-996F-4661-8D84-7BDD44515448.png" class="logo" alt="Logo">
     <div class="header-text">Ali U. - 2030 mezunları</div>
   </div>
   <div class="container">
-    <h2>Akıllı Konu Planlayıcı v10.1</h2>
+    <h2>Akıllı Konu Planlayıcı v11.2</h2>
     <label>Kalan Gün:</label>
     <input type="number" id="days" value="10">
-    <label>Günlük Çalışma Süresi (saat):</label>
-    <input type="number" id="dailyHours" value="4">
     <label>Tekrar Sayısı (min 1):</label>
     <input type="number" id="repeatCount" value="2" min="1">
     <label>Çıkmış Günü Sayısı (min 2):</label>
@@ -95,123 +66,124 @@
     <div class="days-grid" id="planOutput"></div>
   </div>
   <script>
-    const daysInput = document.getElementById('days'),
-          dailyInput = document.getElementById('dailyHours'),
+    const calcBtn = document.getElementById('calcBtn'),
+          addBtn  = document.getElementById('addBtn'),
+          planBtn = document.getElementById('planBtn'),
+          daysInput = document.getElementById('days'),
           repeatInput = document.getElementById('repeatCount'),
-          exitInput = document.getElementById('exitDays'),
+          exitInput   = document.getElementById('exitDays'),
           topicNameInput = document.getElementById('topicName'),
           importanceInput = document.getElementById('importance'),
-          noteCountInput = document.getElementById('noteCount'),
+          noteCountInput  = document.getElementById('noteCount'),
           noteDurationInput = document.getElementById('noteDuration'),
           topicList = document.getElementById('topicList'),
-          planOutput = document.getElementById('planOutput'),
-          addBtn = document.getElementById('addBtn'),
-          planBtn = document.getElementById('planBtn'),
-          calcBtn = document.getElementById('calcBtn');
+          planOutput = document.getElementById('planOutput');
 
     let topics = [];
 
+    // Konu ekle
     addBtn.addEventListener('click', () => {
       const name = topicNameInput.value.trim(),
             imp  = parseInt(importanceInput.value),
             cnt  = parseInt(noteCountInput.value),
             dur  = parseFloat(noteDurationInput.value);
       if (!name || isNaN(imp) || isNaN(cnt) || isNaN(dur)) {
-        alert('Tüm alanları doldurun.');
-        return;
+        alert('Tüm alanları doldurun.'); return;
       }
       topics.push({ name, importance: imp, noteCount: cnt, duration: dur });
       topicList.innerHTML = topics.map(t =>
         `<li>${t.name} | Önem: ${t.importance} | Not: ${t.noteCount} | Süre: ${t.duration}h</li>`
       ).join('');
-      topicNameInput.value = importanceInput.value = noteCountInput.value = noteDurationInput.value = '';
+      [topicNameInput, importanceInput, noteCountInput, noteDurationInput].forEach(i=>i.value='');
       topicNameInput.focus();
     });
 
-    const fields = [
-      daysInput, dailyInput, repeatInput, exitInput,
-      topicNameInput, importanceInput, noteCountInput, noteDurationInput, addBtn, planBtn
-    ];
-    fields.forEach((el, idx) => {
-      el.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          const next = fields[idx + 1] || addBtn;
-          next.focus();
-        }
-      });
-    });
+    // Enter ile geçiş
+    const fields=[daysInput,repeatInput,exitInput,
+                  topicNameInput,importanceInput,noteCountInput,noteDurationInput,
+                  addBtn,planBtn];
+    fields.forEach((el,i)=>el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'){ e.preventDefault(); (fields[i+1]||addBtn).focus(); }
+    }));
 
-    calcBtn.addEventListener('click', () => window.open('https://vliutku.github.io/ankara-tip-hesaplayici-final/?v=1','_blank'));
+    // Hesaplayıcı link
+    calcBtn.addEventListener('click', ()=>window.open(
+      'https://vliutku.github.io/ankara-tip-hesaplayici-final/?v=1','_blank'));
 
+    // Plan oluştur
     planBtn.addEventListener('click', generatePlan);
-    function generatePlan() {
+    function generatePlan(){
       const totalDays = +daysInput.value,
-            dailyH    = +dailyInput.value,
-            reps      = Math.max(1, +repeatInput.value),
-            exits     = Math.max(2, +exitInput.value),
+            reps      = Math.max(1,+repeatInput.value),
+            exits     = Math.max(2,+exitInput.value),
             studyDays = totalDays - exits;
 
-      let tasks = [];
-      topics.forEach(t => {
-        for (let i = 1; i <= t.noteCount; i++) {
-          tasks.push({ topic: t.name, note: i, duration: t.duration, importance: t.importance });
-        }
-      });
-      tasks.sort((a, b) => b.importance - a.importance || a.note - b.note);
+      // initialize
+      const schedule = Array.from({length:studyDays},()=>[]);
 
-      const schedule = Array.from({ length: studyDays }, () => []),
-            used     = Array(studyDays).fill(0),
-            assigned = [],
-            lastNote = {};
-      let ptr = 0;
-
-      tasks.forEach(task => {
-        for (let d = ptr; d < studyDays; d++) {
-          if (
-            used[d] + task.duration <= dailyH &&
-            !schedule[d].some(x => x.topic === task.topic) &&
-            task.note === (lastNote[task.topic] || 0) + 1
-          ) {
-            schedule[d].push({ ...task, type: 'primary' });
-            used[d] += task.duration;
-            lastNote[task.topic] = task.note;
-            assigned.push({ task, day: d });
-            ptr = d + 1;
-            break;
+      // primaries: her gün sırayla her konudan bir not
+      const work = topics.map(t=> ({...t,nextNote:1}) );
+      for(let day=0; day<studyDays; day++){
+        for(const w of work){
+          if(w.nextNote <= w.noteCount){
+            schedule[day].push({
+              topic: w.name,
+              note: w.nextNote,
+              type: 'primary',
+              duration: w.duration
+            });
+            w.nextNote++;
           }
         }
+      }
+
+      // birincilleri topla
+      const assignments = [];
+      schedule.forEach((dayArr,i)=>{
+        dayArr.forEach(task=>{
+          if(task.type==='primary') assignments.push({task,day:i});
+        });
       });
 
-      assigned.forEach(({ task, day: pd }) => {
-        for (let r = 1; r <= reps; r++) {
-          let offset = Math.ceil((studyDays - pd) * r / (reps + 1));
-          let rd = pd + offset;
-          if (rd >= studyDays) rd = studyDays - 1;
-          for (let x = rd; x < studyDays; x++) {
-            if (used[x] + task.duration <= dailyH && schedule[x].length < 2) {
-              schedule[x].push({ ...task, type: 'repeat' });
-              used[x] += task.duration;
+      // tekrarları ata, her bir topic içi artış sırası korunarak
+      assignments.forEach(({task,day:pd})=>{
+        for(let r=1; r<=reps; r++){
+          let offset = Math.ceil((studyDays - pd) * r / (reps + 1)),
+              rd = pd + offset;
+          if(rd>=studyDays) rd = studyDays - 1;
+          for(let d=rd; d<studyDays; d++){
+            // eğer o günde henüz bu konu yoksa ekle
+            if(!schedule[d].some(x=>x.topic===task.topic && x.type==='repeat')){
+              schedule[d].push({
+                topic: task.topic,
+                note: task.note,
+                type: 'repeat',
+                duration: task.duration
+              });
               break;
             }
           }
         }
       });
 
+      // göster
       planOutput.innerHTML = '';
-      schedule.forEach((dayArr, i) => {
+      schedule.forEach((dayArr,i)=>{
         const div = document.createElement('div');
         div.className = 'day-card';
-        div.innerHTML = `<strong>Gün ${i + 1}</strong><ul>` +
-          dayArr.map(x => `<li>${x.topic} - Not ${x.note}${x.type==='repeat'?' [Tekrar]':''} (${x.duration}h)</li>`).join('') +
-          `</ul>`;
+        div.innerHTML = `<strong>Gün ${i+1}</strong><ul>`+
+          dayArr.map(x=>
+            `<li>${x.topic} - Not ${x.note}${x.type==='repeat'?' [Tekrar]':''} (${x.duration}h)</li>`
+          ).join('')+
+          '</ul>';
         planOutput.appendChild(div);
       });
 
-      for (let i = studyDays; i < totalDays; i++) {
+      // çıkmış günler
+      for(let i=studyDays;i<totalDays;i++){
         const div = document.createElement('div');
         div.className = 'day-card gold';
-        div.innerHTML = `<strong>Gün ${i + 1} - Çıkmış</strong><ul><li>Çıkmış soru çözümü</li></ul>`;
+        div.innerHTML = `<strong>Gün ${i+1} - Çıkmış</strong><ul><li>Çıkmış soru çözümü</li></ul>`;
         planOutput.appendChild(div);
       }
     }
